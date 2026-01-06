@@ -1,39 +1,38 @@
-# 🐱 Catbreeds App
+# Catbreeds App
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Flutter-3.38.5-blue" />
-  <img src="https://img.shields.io/badge/Dart-3.10.4-blue" />
-  <img src="https://img.shields.io/badge/Architecture-Clean-success" />
-  <img src="https://img.shields.io/badge/State%20Management-BLoC-purple" />
-</p>
-
-> Aplicación desarrollada en **Flutter** para explorar razas de gatos 🐈, con información detallada, búsqueda en tiempo real y soporte offline.
+Aplicación desarrollada en **Flutter** para explorar razas de gatos, con información detallada, búsqueda en tiempo real y soporte offline.
 
 ---
 
-## ✨ Características
+## Descripción
 
-* 🖼️ **Listado de razas** con imágenes
-* 🔍 **Búsqueda en tiempo real**
-* 📄 **Vista detallada** de cada raza
-* 🎨 **Diseño moderno y limpio**
-* 📡 **Manejo de conexión offline**
-* ⚡ Arquitectura escalable y mantenible
+Catbreeds App es una aplicación móvil construida con Flutter que consume la API pública de *The Cat API* para mostrar un listado de razas de gatos. La aplicación está estructurada siguiendo los principios de **Clean Architecture**, lo que facilita su escalabilidad, mantenibilidad y testeo.
 
 ---
 
-## 🧰 Tecnologías utilizadas
+## Características
 
-| Tecnología   | Versión            |
-| ------------ | ------------------ |
-| Flutter      | 3.38.5             |
-| Dart         | 3.10.4             |
-| Arquitectura | Clean Architecture |
-| Estado       | BLoC               |
+* Listado de razas con imágenes
+* Búsqueda en tiempo real
+* Vista detallada de cada raza
+* Manejo de estados mediante BLoC
+* Soporte para detección de conectividad
+* Arquitectura modular y desacoplada
 
 ---
 
-## 📦 Dependencias principales
+## Tecnologías utilizadas
+
+| Tecnología        | Versión            |
+| ----------------- | ------------------ |
+| Flutter           | 3.38.5             |
+| Dart              | 3.10.4             |
+| Arquitectura      | Clean Architecture |
+| Gestión de estado | BLoC               |
+
+---
+
+## Dependencias principales
 
 ```yaml
 dependencies:
@@ -48,9 +47,9 @@ dependencies:
 
 ---
 
-## 🚀 Instalación y uso
+## Instalación
 
-### 1️⃣ Clonar el repositorio
+1. Clonar el repositorio:
 
 ```bash
 git clone <repo-url>
@@ -58,7 +57,7 @@ cd cats_app
 flutter pub get
 ```
 
-### 2️⃣ Ejecutar la aplicación
+2. Ejecutar la aplicación:
 
 ```bash
 flutter run
@@ -66,16 +65,16 @@ flutter run
 
 ---
 
-## 🏗️ Generación de builds
+## Generación de builds
 
-### 🤖 Android
+### Android
 
 ```bash
 flutter build apk --release
 flutter build appbundle --release
 ```
 
-### 🍎 iOS
+### iOS
 
 ```bash
 flutter build ios --release
@@ -83,39 +82,41 @@ flutter build ios --release
 
 ---
 
-## 🗂️ Estructura del proyecto
+## Estructura del proyecto
 
 ```text
 lib/
-├── core/           # Lógica y utilidades compartidas
-├── features/       # Módulos de la app
-│   ├── breeds/     # Feature de razas de gatos
-│   └── splash/     # Pantalla inicial
-└── main.dart       # Punto de entrada
+├── core/           
+├── features/       
+│   ├── breeds/     
+│   │   ├── data/
+│   │   ├── domain/
+│   │   └── presentation/
+│   └── splash/     
+└── main.dart       
 ```
 
 ---
 
-## 🌐 Configuración API
+## API
 
-* **Endpoint principal:**
+La aplicación consume el siguiente endpoint:
 
-  ```
-  https://api.thecatapi.com/v1/breeds
-  ```
-
----
-
-## 📸 Capturas de pantalla
-
-> *(Agrega aquí screenshots de la app)*
+```
+https://api.thecatapi.com/v1/breeds
+```
 
 ---
 
-## 📄 Licencia
+## Consideraciones técnicas
 
-Este proyecto se distribuye bajo la licencia **MIT**.
+* Uso de `Either` (dartz) para el manejo de errores
+* Inyección de dependencias con `get_it`
+* Separación clara entre capas de datos, dominio y presentación
+* Preparada para extensión con nuevas features
 
 ---
 
-💡 *Proyecto ideal como base para apps Flutter con arquitectura limpia y buenas prácticas.*
+## Licencia
+
+Este proyecto se distribuye bajo la licencia MIT.
